@@ -1,0 +1,13 @@
+<select>
+          <option value="">-- Choisissez -- </option>
+          <?php
+          $reponse = executeSQL("SELECT * FROM atelier " );
+          if($result) {
+              while ($donnees = mysqli_fetch_array($reponse))
+{
+//Liste déroulante 
+echo'<option value ="'.$donnees['id'].'">'.$donnees['nom'].'</option>'; 
+}
+          }
+?> 
+</select> 
